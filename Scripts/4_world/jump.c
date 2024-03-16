@@ -1,16 +1,9 @@
-modded class PlayerBase // modded keyword for modding existing class
+modded class PlayerBase
 {
-	override void OnJumpStart() // overriding existing function
+	override void OnJumpStart()
     {
-        super.OnJumpStart();   // call the original jump function so we don't break stuff
-		
-
-		
-		//azw_playTestSoundLater();
-		//Print("current_height:");
-		//auto AZW_pos = AZW_getPlayerPos()[1];
-		//Print(AZW_pos);
-		SpawnObject("azw_DamageArea", AZW_getPlayerPos(), "0.000000 -0.000000 -0.000000", 1);
+        super.OnJumpStart(); 
+		SpawnObject("azw_DamageArea", azwGetPlayerPos(), "0.000000 -0.000000 -0.000000", 1);
     }
 
 	static void SpawnObject(string type, vector position, vector orientation, float scale = 1.0)
@@ -28,7 +21,7 @@ modded class PlayerBase // modded keyword for modding existing class
 	    } 
 	}
 	
-	vector AZW_getPlayerPos()
+	vector azwGetPlayerPos()
 	{
 		Man player = GetHierarchyRootPlayer();
 		vector playerPos = player.GetPosition();
